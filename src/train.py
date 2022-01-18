@@ -123,19 +123,19 @@ checkpoints_path = 'checkpoints/'
 best_model = 'best_model/'
 EPOCHS = 4
 
-# model.fit(
-#     x = X_train,
-#     y = y_train,
-#     validation_data=(X_val, y_val),
-#     epochs=EPOCHS,
-#     callbacks=[RoCAUCEvalCallback((X_val, y_val)), 
-#                tf.keras.callbacks.ModelCheckpoint(
-#                    filepath=checkpoints_path,
-#                    save_weights_only=False
-#                ),
-#                tf.keras.callbacks.ModelCheckpoint(
-#                    filepath=best_model,
-#                    save_best_only=True,
-#                    save_weights_only=False
-#                )]
-# )
+model.fit(
+    x = X_train,
+    y = y_train,
+    validation_data=(X_val, y_val),
+    epochs=EPOCHS,
+    callbacks=[RoCAUCEvalCallback((X_val, y_val)), 
+               tf.keras.callbacks.ModelCheckpoint(
+                   filepath=checkpoints_path,
+                   save_weights_only=False
+               ),
+               tf.keras.callbacks.ModelCheckpoint(
+                   filepath=best_model,
+                   save_best_only=True,
+                   save_weights_only=False
+               )]
+)
