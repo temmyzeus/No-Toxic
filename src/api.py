@@ -1,3 +1,5 @@
+import os
+import sys
 import logging
 import time
 import warnings
@@ -7,12 +9,14 @@ import tensorflow as tf
 from keras.preprocessing.sequence import pad_sequences
 from fastapi import FastAPI
 from pydantic import BaseModel
-try:
-    from pipeline.preprocess import clean_text, tokenizer
-    from utils.load_model import model
-except ImportError:
-    from .pipeline.preprocess import clean_text, tokenizer
-    from .utils.load_model import model
+dirname = os.path.dirname(__file__)
+print(f'DIR: {dirname}')
+print(f'BEFORE: {sys.path}')
+sys.path.append(dirname)
+print(f'AFTER: {sys.path}')
+from pipeline.preprocess import clean_text, tokenizer
+from utils.load_model import model
+
 
 api = FastAPI()
 logging.basicConfig(level=logging.INFO)
