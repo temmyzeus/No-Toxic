@@ -8,11 +8,11 @@ from keras.preprocessing.sequence import pad_sequences
 from fastapi import FastAPI
 from pydantic import BaseModel
 try:
+    from pipeline.preprocess import clean_text, tokenizer
+    from utils.load_model import model
+except ImportError:
     from .pipeline.preprocess import clean_text, tokenizer
     from .utils.load_model import model
-except ImportError:
-    from src.pipeline.preprocess import clean_text, tokenizer
-    from src.utils.load_model import model
 
 api = FastAPI()
 logging.basicConfig(level=logging.INFO)
