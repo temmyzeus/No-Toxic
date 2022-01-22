@@ -1,13 +1,13 @@
 import os
+import sys
 import re
 import string
 import sys
 
 import joblib
-try:
-    from utils.config import MODELS_DIR, ROOT_DIR, TOKENIZER_NAME
-except ImportError:
-    from ..utils.config import MODELS_DIR, ROOT_DIR, TOKENIZER_NAME
+dirname = os.path.dirname(os.path.dirname(__file__))
+sys.path.append(dirname)
+from utils.config import MODELS_DIR, ROOT_DIR, TOKENIZER_NAME
 
 TOKENIZER_PATH = ROOT_DIR / MODELS_DIR / TOKENIZER_NAME
 
