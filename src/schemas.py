@@ -1,11 +1,10 @@
 from pydantic import BaseModel
-
+from typing import Union
 
 class Text(BaseModel):
     text: str
 
 
 class PredictionResponse(BaseModel):
-    tokens: list
-    predictions: list
-    number_of_labels: int
+    predictions: Union[list, str]
+    number_of_labels: int = 0
