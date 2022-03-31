@@ -50,13 +50,20 @@ def predict(text: Text):
     new_preds = round_predictions_up(preds)
     end_time = time.time()
     total_inference_time = end_time - start_time
+
     print("Prediction: ", preds)
     print("Prediction Probs: ", new_preds)
     print("Preds:", get_targets(new_preds))
+
     logging.info("Inference time is {} seconds".format(total_inference_time))
+
     target = get_targets(new_preds)
-    return {
-        "tokens": text_tokens,
-        "predictions": target,
-        "number_of_labels": len(target),
-    }
+    if target == "Not Toxic":
+        return {
+            "predictions": target
+        }
+    else:
+        return {
+            "predictions": target,
+            "number_of_labels": len(target),
+        }
