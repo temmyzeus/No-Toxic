@@ -1,4 +1,7 @@
+![](./images/No_Toxic.png)
+
 # No-Toxic
+
 **An API that predicts the nature of toxicity of a sentence with multi-label prediction**
 
 Feature to be Added:
