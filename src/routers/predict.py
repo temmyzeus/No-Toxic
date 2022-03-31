@@ -2,19 +2,12 @@ import logging
 import time
 from typing import Union
 
-import tensorflow as tf
 from fastapi import APIRouter
 from keras.preprocessing.sequence import pad_sequences
 
-from ..schemas import Text, PredictionResponse
-
-try:
-    from pipeline.preprocess import clean_text, tokenizer
-    from utils.load_model import model
-except ImportError:
-    from ..pipeline.preprocess import clean_text, tokenizer
-    from ..utils.load_model import model
-
+from ..pipeline.preprocess import clean_text, tokenizer
+from ..schemas import PredictionResponse, Text
+from ..utils.load_model import model
 
 router = APIRouter(prefix="/predict", tags=["Predict"])
 
