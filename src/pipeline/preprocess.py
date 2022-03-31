@@ -6,10 +6,7 @@ import sys
 
 import joblib
 
-try:
-    from utils.config import MODELS_DIR, ROOT_DIR, TOKENIZER_NAME
-except ImportError:
-    from ..utils.config import MODELS_DIR, ROOT_DIR, TOKENIZER_NAME
+from ..utils.config import MODELS_DIR, ROOT_DIR, TOKENIZER_NAME
 
 TOKENIZER_PATH = ROOT_DIR / MODELS_DIR / TOKENIZER_NAME
 
