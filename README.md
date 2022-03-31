@@ -1,5 +1,7 @@
 # No-Toxic
-An API that tells the probabilty toxivity in a sentence!!
+**An API that predicts the nature of toxicity of a sentence with multi-label prediction**
 
-This was supposed to be a Fake-Nes-Classifiaction project but the concept of classifiying fake news is based on factors like location, sector, country, source
-so I changes it to a **No_Toxic** to get the probabilty of a sentence beinng toxic on 5 different labels.
+Feature to be Added:
+User can select if they want the labels as a list or all classes with with probablity and decide a threshold for themselves.
+
+Built with: Python, FastAPI, Tensorflow
