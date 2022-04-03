@@ -3,10 +3,7 @@ import warnings
 
 import tensorflow as tf
 
-try:
-    from config import MODEL_NAME, MODELS_DIR, ROOT_DIR
-except ImportError:
-    from .config import MODEL_NAME, MODELS_DIR, ROOT_DIR
+from .config import MODEL_NAME, MODELS_DIR, ROOT_DIR
 
 logging.basicConfig(level=logging.INFO)
 
